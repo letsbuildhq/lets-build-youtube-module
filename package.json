@@ -1,6 +1,6 @@
 {
   "name": "lets-build-youtube-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery module to integrate interactions with YouTube videos.",
   "main": "index.js",
   "scripts": {
