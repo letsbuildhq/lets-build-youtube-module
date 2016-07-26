@@ -1,5 +1,5 @@
-exports.printMsg = function() {
+exports.init = function() {
 	
-	console.log("This is a message from the demo package");
+	alert('hello world! it works');
 
 }
