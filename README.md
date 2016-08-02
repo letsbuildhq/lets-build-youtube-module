@@ -12,7 +12,7 @@ $(‘div.container’).LBYoutuber();
 - controls: boolean (default: true); allows user play/pause
 - playPauseButton: element selector that plays/pauses the video, e.g. (‘.play-button’), default is the containing element; must be wrapped inside the containing element
 - onVideoStart: function
-- onVideoPlay: functiuon
+- onVideoPlay: function
 - onVideoPause: function
 - onVideoFinish: function
 
