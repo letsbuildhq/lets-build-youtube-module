@@ -1,21 +1,48 @@
 # lets-build-youtube-module
 
-## Quickstart
+## Install
 
-$(‘div.container’).LBYoutuber();
+install via `npm install lets-build-youtube-module`
+
+Use by calling 
 
 ## Options
-- backgroundSize: cover (default), contain
-- aspectRatio: number (default: 16/9)
-- autoplay: boolean (default: true)
-- muted: boolean (default: false)
-- controls: boolean (default: true); allows user play/pause
-- playPauseButton: element selector that plays/pauses the video, e.g. (‘.play-button’), default is the containing element; must be wrapped inside the containing element
-- onVideoStart: function
-- onVideoPlay: function
-- onVideoPause: function
-- onVideoFinish: function
+- youtubeId: youtube id of video
+- onReady: callback when video is loaded
+- onPause: callback function when video is paused
+- onPlay: callback function when video resumes playing after pause
+- onEnded: callback function when video ends
 
-## Methods
-- destroy: destroys the LBYoutuber instance
-- loadNew: loads a new video inside an existing instance
+## Events
+- start: start the video
+- playPause: pause video if playing; play video if paused
+- stop: stop the video
+
+## Example
+
+
+### HTML
+```
+<div id="video-wduZHtRbSkY"></div>
+```
+
+### Javascript
+```
+var options = {
+	youtubeId: 'wduZHtRbSkY',
+	onReady: function() {
+		console.log('The video is loaded from ')
+	}
+}
+var player = new YTLoader.embed(options);
+
+//assuming JQuery, bind events like so
+$('someElement').click(player.playPause);
+```
+
+// The above will load a video into an iframe
+// and insert it into the DOM in place of an element
+// with id = video-[youtubeId]
+
+## TODO
+- include options to set Iframe params, e.g., showing video player controls
