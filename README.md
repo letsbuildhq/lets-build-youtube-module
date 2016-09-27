@@ -23,11 +23,11 @@ Use by calling
 
 ### HTML
 ```
-<div id="video-wduZHtRbSkY"></div>
+<div id="youtube-wduZHtRbSkY"></div>
 ```
 
 ### Javascript
-This will load a video into an iframe and insert it into the DOM in place of an element with `id="video-wduZHtRbSkY"`
+This will load a video into an iframe and insert it into the DOM in place of an element with `id="youtube-wduZHtRbSkY"`
 
 ```
 var options = {
