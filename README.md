@@ -33,7 +33,7 @@ This will load a video into an iframe and insert it into the DOM in place of an 
 var options = {
 	youtubeId: 'wduZHtRbSkY',
 	onReady: function() {
-		console.log('The video is loaded from ')
+		console.log("The video is loaded");
 	}
 }
 var player = new YTLoader.embed(options);
