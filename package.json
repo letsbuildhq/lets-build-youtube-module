@@ -1,7 +1,7 @@
 {
   "name": "lets-build-youtube-module",
   "version": "1.0.1",
-  "description": "A jQuery module to integrate interactions with YouTube videos.",
+  "description": "Load and interact with YouTube videos using the YouTube Iframe API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
