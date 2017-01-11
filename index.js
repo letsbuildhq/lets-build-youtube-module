@@ -1,16 +1,18 @@
+/* Let's Build Youtube Loader 0.0.1
+*/
+
 exports.init = function() {
-	
+
 	window.YTLoader = {
 
 		youTubeIframeAPIReady: false,
 		onReady: function() {}, 
-
-		embed: function(options) {
+		embed: function(options, onReady) {
 			// if API not ready, set function to re-call
-			// `youtubeEmbed` when it is ready
+			// `embed` when it is ready
 			if (!YTLoader.youTubeIframeAPIReady) {
 				YTLoader.onReady = function() {
-					YTLoader.embed(options);
+					onReady();
 				}
 				return;
 			}
@@ -26,7 +28,9 @@ exports.init = function() {
 				},
 				events: {
 					'onReady': function() {
-						self.playVideo();
+						if (options.autoPlay) {
+							self.playVideo();
+						}
 						if (options.onReady) {
 							options.onReady();
 						}
@@ -56,7 +60,7 @@ exports.init = function() {
 		        }
 			}.bind(this);
 
-			this.startVideo = function(e) {
+			this.playVideo = function(e) {
 				this.videoPlayer.seekTo(0);
 				this.videoPlayer.playVideo();
 			}.bind(this);
@@ -73,6 +77,10 @@ exports.init = function() {
 				this.videoPlayer.pauseVideo();
 			}.bind(this);
 
+			this.getVideoState = function(e) {
+				return this.videoPlayer.getPlayerState();
+			}.bind(this);
+
 		}
 
 	};
@@ -86,7 +94,7 @@ exports.init = function() {
 
 	// load the youtube iframe API
 	var tag = document.createElement('script');
-	tag.src = "http://www.youtube.com/iframe_api";
+	tag.src = "//www.youtube.com/iframe_api";
 	var firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

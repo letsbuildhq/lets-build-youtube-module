@@ -14,12 +14,18 @@ Use by calling
 - `onEnded` callback function when video ends
 
 ## Events
-- `start` start the video
-- `playPause` pause video if playing; play video if paused
-- `stop` stop the video
+- `startVideo` start the video
+- `playPauseVideo` pause video if playing; play video if paused
+- `stopVideo` stop the video
+- `getVideoState` get a numeral value indicating the video state:
+	`-1` unstarted
+	`0` ended
+	`1` playing
+	`2` paused
+	`3` buffering
+	`5` video cued
 
 ## Example
-
 
 ### HTML
 ```
@@ -39,7 +45,7 @@ var options = {
 var player = new YTLoader.embed(options);
 
 //assuming JQuery, bind events like so
-$('someElement').click(player.playPause);
+$('.a-player-button').click(player.playPause);
 
 ```
 
