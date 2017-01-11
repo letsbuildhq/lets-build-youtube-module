@@ -8,6 +8,7 @@ Use by calling
 
 ## Options
 - `youtubeId` youtube id of video
+= `autoplay` option to start playing video as soon as it's loaded; default `false`
 - `onReady` callback when video is loaded
 - `onPause` callback function when video is paused
 - `onPlay` callback function when video resumes playing after pause
