@@ -1,6 +1,3 @@
-/* Let's Build Youtube Loader 0.0.1
-*/
-
 exports.init = function() {
 
 	window.YTLoader = {
