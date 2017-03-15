@@ -16,8 +16,7 @@ exports.init = function() {
 				}
 				return;
 			}
-			var self = this;
-			this.videoPlayer = new YT.Player('youtube-' + options.youtubeId, {
+			this.videoPlayer = new YT.Player('ytloader-' + options.youtubeId, {
 				videoId: options.youtubeId,
 				playerVars: {
 					rel: 0,
@@ -29,17 +28,17 @@ exports.init = function() {
 				events: {
 					'onReady': function() {
 						if (options.autoPlay) {
-							self.playVideo();
+							this.playVideo();
 						}
 						if (options.onReady) {
 							options.onReady();
 						}
 					},
 					'onStateChange': function() {
-						self.onStateChange()
+						this.onStateChange()
 					}
 				}
-			});
+			}.bind(this));
 
 			this.onStateChange = function() {
 				var state = this.videoPlayer.getPlayerState();
